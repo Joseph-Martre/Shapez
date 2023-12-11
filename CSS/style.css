@@ -1,0 +1,401 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-light: #8abdff;
+    --primary: #6d5dfc;
+    --primary-dark: #5b0eeb;
+    --white: #FFFFFF;
+    --greyLight-1: #E4EBF5;
+    --greyLight-2: #c8d0e7;
+    --greyLight-3: #bec8e4;
+    --greyDark: #9baacf;
+    /* chocolate menu values */
+    --chocolateGridPixelSize: 11px;
+    --chocolateEntryInitialTopOffset: 70px;
+    --chocolateEntryInitialRightOffset: -150px;
+    --chocolateEntrySpacing: 40px;
+  }
+  
+  *, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+  }
+
+  html, body{
+    margin: 0px;
+    height: 100%;
+  }
+  
+  html{
+    box-sizing: border-box;
+    font-size: 75%;
+    overflow-x: hidden;
+    background: var(--greyLight-1);
+    font-family: "Poppins", sans-serif;
+  }
+  
+  /* .container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Poppins", sans-serif;
+    background: var(--greyLight-1);
+  }
+  
+  .components {
+    width: 75rem;
+    height: 40rem;
+    border-radius: 3rem;
+    box-shadow: 0.8rem 0.8rem 1.4rem var(--greyLight-2), -0.2rem -0.2rem 1.8rem var(--white);
+    padding: 4rem;
+    display: grid;
+    grid-template-columns: 17.6rem 19rem 20.4rem;
+    grid-template-rows: repeat(autofit, -webkit-min-content);
+    grid-template-rows: repeat(autofit, min-content);
+    grid-column-gap: 5rem;
+    grid-row-gap: 2.5rem;
+    align-items: center;
+  } */
+
+/* media query */
+
+.desktopNav{
+  display: block;
+}
+
+.mobileNav{
+  display: none;
+}
+
+.mobileTextToHide{
+  display: block;
+}
+.mobileTextToHideInline{
+  display: inline-block;
+}
+.mobileTextToDisplay{
+  display: none;
+}
+
+@media screen and (max-width:900px){
+  .mobileNav{
+    display: block;
+  }
+  .desktopNav{
+    display: none;
+  }
+  .mobileTextToHide{
+    display: none;
+  }
+  .mobileTextToHideInline{
+    display: none;
+  }
+  .mobileTextToDisplay{
+    display: block;
+  }
+  footer .btn{
+    height: 3rem;
+    width: 5rem;
+  }
+}
+
+  /* header */
+
+header{
+    display: flex;
+    justify-content: space-between;
+    height: 60px;
+    box-shadow: 0rem 0.8rem 1.4rem var(--greyLight-2);
+    position: fixed;
+    top: 0px;
+    z-index: 5;
+    background-color: var(--greyLight-1);
+    opacity: 93%;
+    width: 100%;
+}
+
+ #chocolateToggleLogic{
+    display: none;
+ }
+
+#chocolateToggleLogic:checked ~ label .chocolateToggleExpandingTriggerBox{
+    height: 100dvh;
+    width: 100dvw;
+}
+
+.chocolateToggleFixedTriggerBox{
+    height: calc(3 * var(--chocolateGridPixelSize));
+    width: calc(3 * var(--chocolateGridPixelSize));
+    background-color: green;
+    position: absolute;
+    right: 14px;
+    top: 12px;
+    opacity: 0%;
+    z-index: 20;
+}
+
+.chocolateToggleExpandingTriggerBox{
+    height: 0px;
+    width: 0px;
+    background-color: red;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    opacity: 0%;
+    z-index: 10;
+  }
+
+.chocolateToggleFixedTriggerBox:hover{
+    cursor: pointer;
+}
+
+/* desktop nav menu */
+
+.desktopNav nav ul{
+  list-style: none;
+  padding-right: 50px;
+}
+
+.desktopNav nav ul li a{
+  text-decoration: none;
+  color: var(--primary);
+}
+
+.desktopNav nav ul li a:hover{
+  text-decoration: underline;
+}
+
+.desktopNav nav ul li{
+  display: inline-block;
+  margin-left: 20px;
+  margin-top: 13px;
+}
+
+.desktopNav nav ul li a p{
+  font-size: x-large;
+}
+
+.shiftingMenu nav ul li a div:hover{
+  background-color: var(--greyLight-2);
+}
+
+/* shifting nav menu */
+
+.shiftingMenu nav ul{
+  list-style: none;
+}
+
+.shiftingMenu nav ul li a{
+  text-decoration: none;
+  color: var(--primary);
+}
+
+.shiftingMenu nav ul li a div{
+  height: var(--chocolateEntrySpacing);
+  display: flex;
+  align-items: center;
+  padding-left: 35px;
+  font-size: large;
+}
+
+.shiftingMenu nav ul li a div:hover{
+  background-color: var(--greyLight-2);
+}
+
+.shiftingMenu{
+  width: calc(-1 * var(--chocolateEntryInitialRightOffset) + 60px);
+  background-color: var(--greyLight-1);
+  box-shadow: 0.8rem 0.8rem 1.4rem var(--greyLight-2), -0.8rem -0.8rem 1.4rem var(--greyLight-2);
+  position: absolute;
+  z-index: 15;
+  right: 0px;
+  translate: calc(-1 * var(--chocolateEntryInitialRightOffset) + 100px);
+  transition: all 0.2s ease;
+}
+
+#chocolateToggleLogic:checked ~ .shiftingMenu{
+  translate: 0px;
+}
+
+.shiftingMenuTopMargin{
+  height: calc(16px + var(--chocolateEntryInitialTopOffset) - var(--chocolateEntrySpacing) * 0.5);
+  background-color: var(--greyLight-1);
+}
+
+/* chocolate menu icon looks */
+
+.chocolateHollowPoints{
+  display: grid;
+  grid-template-columns: repeat(3, var(--chocolateGridPixelSize));
+  grid-template-rows: repeat(3, var(--chocolateGridPixelSize));
+  position: absolute;
+  right: 13px;
+  top: 13px;
+  z-index: 16;
+}
+
+.chocolateHollowPoints div{
+  width: 9px;
+  height: 9px;
+  background-color: var(--greyLight-1);
+  border: 2px solid var(--primary);
+}
+
+.chocolateShiftingPoints{
+  display: grid;
+  grid-template-columns: repeat(3, var(--chocolateGridPixelSize));
+  grid-template-rows: repeat(3, var(--chocolateGridPixelSize));
+  position: absolute;
+  right: 12px;
+  top: 14px;
+  z-index: 17;
+}
+
+.chocolateShiftingPoints div{
+  width: 7px;
+  height: 7px;
+  background-color: var(--primary);
+  transition: all 0.2s ease;
+  pointer-events: none;
+}
+
+#chocolateToggleLogic:checked ~ .chocolateShiftingPoints #shiftingPoint1{
+  transition: all 0.2s ease;
+  transform: translate(var(--chocolateEntryInitialRightOffset), var(--chocolateEntryInitialTopOffset));
+}
+#chocolateToggleLogic:checked ~ .chocolateShiftingPoints #shiftingPoint2{
+  transition: all 0.2s ease;
+  transform: translate(calc(var(--chocolateEntryInitialRightOffset) - var(--chocolateGridPixelSize)), calc(var(--chocolateEntryInitialTopOffset) + var(--chocolateEntrySpacing)));
+}
+#chocolateToggleLogic:checked ~ .chocolateShiftingPoints #shiftingPoint3{
+  transition: all 0.2s ease;
+  transform: translate(calc(var(--chocolateEntryInitialRightOffset) - 2 * var(--chocolateGridPixelSize)), calc(var(--chocolateEntryInitialTopOffset) + 2 * var(--chocolateEntrySpacing)));
+}
+#chocolateToggleLogic:checked ~ .chocolateShiftingPoints #shiftingPoint4{
+  transition: all 0.2s ease;
+  transform: translate(var(--chocolateEntryInitialRightOffset), calc(var(--chocolateEntryInitialTopOffset) - var(--chocolateGridPixelSize) + 3 * var(--chocolateEntrySpacing)));
+}
+/* #chocolateToggleLogic:checked ~ .chocolateShiftingPoints #shiftingPoint5{
+  transition: all 0.2s ease;
+  transform: translate(calc(var(--chocolateEntryInitialRightOffset) - var(--chocolateGridPixelSize)), calc(var(--chocolateEntryInitialTopOffset) - var(--chocolateGridPixelSize) + 4 * var(--chocolateEntrySpacing)));
+}
+#chocolateToggleLogic:checked ~ .chocolateShiftingPoints #shiftingPoint6{
+  transition: all 0.2s ease;
+  transform: translate(calc(var(--chocolateEntryInitialRightOffset) - 2 * var(--chocolateGridPixelSize)), calc(var(--chocolateEntryInitialTopOffset) - var(--chocolateGridPixelSize) + 5 * var(--chocolateEntrySpacing)));
+}
+#chocolateToggleLogic:checked ~ .chocolateShiftingPoints #shiftingPoint7{
+  transition: all 0.2s ease;
+  transform: translate(var(--chocolateEntryInitialRightOffset), calc(var(--chocolateEntryInitialTopOffset) - 2 * var(--chocolateGridPixelSize) + 6 * var(--chocolateEntrySpacing)));
+}
+#chocolateToggleLogic:checked ~ .chocolateShiftingPoints #shiftingPoint8{
+  transition: all 0.2s ease;
+  transform: translate(calc(var(--chocolateEntryInitialRightOffset) - var(--chocolateGridPixelSize)), calc(var(--chocolateEntryInitialTopOffset) - 2 * var(--chocolateGridPixelSize) + 7 * var(--chocolateEntrySpacing)));
+}
+#chocolateToggleLogic:checked ~ .chocolateShiftingPoints #shiftingPoint9{
+  transition: all 0.2s ease;
+  transform: translate(calc(var(--chocolateEntryInitialRightOffset) - 2 * var(--chocolateGridPixelSize)), calc(var(--chocolateEntryInitialTopOffset) - 2 * var(--chocolateGridPixelSize) + 8 * var(--chocolateEntrySpacing)));
+} */
+
+  /*  BUTTONS  */
+  .btn {
+    width: 15rem;
+    height: 4rem;
+    border-radius: 1rem;
+    box-shadow: 0.3rem 0.3rem 0.6rem var(--greyLight-2), -0.2rem -0.2rem 0.5rem var(--white);
+    justify-self: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: 0s ease;
+    text-decoration: none;
+  }
+  .btn__primary {
+    grid-column: 1/2;
+    grid-row: 4/5;
+    background: var(--primary);
+    box-shadow: inset 0.2rem 0.2rem 1rem var(--primary-light), inset -0.2rem -0.2rem 1rem var(--primary-dark), 0.3rem 0.3rem 0.6rem var(--greyLight-2), -0.2rem -0.2rem 0.5rem var(--white);
+    color: var(--greyLight-1);
+  }
+  .btn__primary:hover {
+    color: var(--white);
+  }
+  .btn__primary:active {
+    box-shadow: inset 0.2rem 0.2rem 1rem var(--primary-dark), inset -0.2rem -0.2rem 1rem var(--primary-light);
+  }
+  .btn__secondary {
+    grid-column: 1/2;
+    grid-row: 5/6;
+    color: var(--greyDark);
+  }
+  .btn__secondary:hover {
+    color: var(--primary);
+  }
+  .btn__secondary:active {
+    box-shadow: inset 0.2rem 0.2rem 0.5rem var(--greyLight-2), inset -0.2rem -0.2rem 0.5rem var(--white);
+  }
+  .btn p {
+    font-size: 1.6rem;
+  }
+
+
+/* footer */
+
+footer{
+  color: var(--greyDark);
+  height: 60px;
+  box-shadow: 1rem 0rem 1.8rem var(--white);
+  position: static;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+footer a{
+  color: var(--greyDark);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+footer p{
+  display: inline-block;
+}
+
+footer a span{
+  background-color: var(--greyDark);
+  height: 60px;
+}
+
+footer a:hover{
+  color: var(--primary);
+  text-decoration: underline;
+}
+
+footer a:hover span{
+  background-color: var(--primary);
+}
+
+footer *{
+  text-decoration: none;
+}
+
+footer .btn{
+  height: 3rem;
+}
+
+/* dummy bottom section just to test scrolling */
+
+.dummySection{
+    font-family: "Poppins", sans-serif;
+    display: flex;
+    justify-content: center;
+    height: 1500px;
+}
