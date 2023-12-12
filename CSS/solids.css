@@ -374,7 +374,7 @@ footer .btn{
   height: 60px;
 }
 
-/* cube section */
+/* flex shape section */
 
 .geometryTitle{
   text-align: center;
@@ -430,6 +430,15 @@ h1{
   padding: 20px;
 }
 
+.titleTextContainerDiv{
+  display: flex;
+  justify-content: center;
+}
+
+.titleTextWrapDiv{
+  width: 60%;
+}
+
 @media screen and (max-width:800px){
   .mobileNav{
     display: block;
@@ -449,6 +458,9 @@ h1{
   footer .btn{
     height: 3rem;
     width: 5rem;
+  }
+  .titleTextWrapDiv{
+    width: 90%;
   }
 }
 
