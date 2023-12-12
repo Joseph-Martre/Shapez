@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    width: auto;
 }
 
 :root {
@@ -81,28 +82,6 @@
 }
 .mobileTextToDisplay{
   display: none;
-}
-
-@media screen and (max-width:900px){
-  .mobileNav{
-    display: block;
-  }
-  .desktopNav{
-    display: none;
-  }
-  .mobileTextToHide{
-    display: none;
-  }
-  .mobileTextToHideInline{
-    display: none;
-  }
-  .mobileTextToDisplay{
-    display: block;
-  }
-  footer .btn{
-    height: 3rem;
-    width: 5rem;
-  }
 }
 
   /* header */
@@ -391,11 +370,96 @@ footer .btn{
   height: 3rem;
 }
 
-/* dummy bottom section just to test scrolling */
+#dummyTopMarginSection, #dummyBottomMarginSection{
+  height: 60px;
+}
 
-.dummySection{
-    font-family: "Poppins", sans-serif;
-    display: flex;
-    justify-content: center;
-    height: 1500px;
+/* cube section */
+
+.geometryTitle{
+  text-align: center;
+  padding: 20px;
+  color: var(--primary);
+  font-size: large;
+}
+
+.threeFlexContainer{
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.thirdFlexContainer{
+  box-shadow: 0.8rem 0.8rem 1.4rem var(--greyLight-2), -0.2rem -0.2rem 1.8rem var(--white);
+  width: 30%;
+  aspect-ratio: 3 / 4;
+  color: var(--greyDark);
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.thirdFlexContainer img{
+  width: 100%;
+}
+
+.shapeFlavorText{
+  width: 100%;
+  aspect-ratio: 3 / 1;
+  display: flex;
+  align-items: center;
+  font-size: medium;
+  padding: 10px;
+}
+
+/* title section */
+.geometryMainTitleText{
+  text-align: center;
+  padding-top: 30px;
+}
+
+h1{
+  font-weight: bold;
+  font-size: x-large;
+  color: var(--primary);
+}
+
+.mainTitleFlavorText{
+  color: var(--greyDark);
+  font-size:medium;
+  padding: 20px;
+}
+
+@media screen and (max-width:800px){
+  .mobileNav{
+    display: block;
+  }
+  .desktopNav{
+    display: none;
+  }
+  .mobileTextToHide{
+    display: none;
+  }
+  .mobileTextToHideInline{
+    display: none;
+  }
+  .mobileTextToDisplay{
+    display: block;
+  }
+  footer .btn{
+    height: 3rem;
+    width: 5rem;
+  }
+}
+
+@media screen and (max-width:800px) and (min-width:425px){
+  .thirdFlexContainer{
+    width: 45%;
+  }
+}
+
+@media screen and (max-width:425px){
+  .thirdFlexContainer{
+    width: 90%;
+  }
 }
