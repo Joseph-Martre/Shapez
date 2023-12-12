@@ -84,28 +84,6 @@
   display: none;
 }
 
-@media screen and (max-width:800px){
-  .mobileNav{
-    display: block;
-  }
-  .desktopNav{
-    display: none;
-  }
-  .mobileTextToHide{
-    display: none;
-  }
-  .mobileTextToHideInline{
-    display: none;
-  }
-  .mobileTextToDisplay{
-    display: block;
-  }
-  footer .btn{
-    height: 3rem;
-    width: 5rem;
-  }
-}
-
   /* header */
 
 header{
@@ -392,11 +370,132 @@ footer .btn{
   height: 3rem;
 }
 
-/* dummy bottom section just to test scrolling */
 
-.dummySection{
-    font-family: "Poppins", sans-serif;
-    display: flex;
-    justify-content: center;
-    height: 1500px;
+/* title section */
+.geometryMainTitleText{
+  text-align: center;
+  padding-top: 90px;
+}
+
+h1{
+  font-weight: bold;
+  font-size:xx-large;
+  color: var(--primary);
+}
+
+.mainTitleFlavorText{
+  color: var(--greyDark);
+  font-size: medium;
+  padding: 20px;
+}
+
+.titleTextContainerDiv{
+  display: flex;
+  justify-content: center;
+}
+
+.titleTextWrapDiv{
+  width: 60%;
+}
+
+/* shape skill section formatting */
+
+.skillPageMainTitle{
+  font-weight: bold;
+  font-size:x-large;
+  color: var(--primary);
+  text-align: center;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.skillSectionTitle{
+  text-align: center;
+}
+
+.skillSectionTitle h2{
+  font-weight: bold;
+  font-size: x-large;
+  color: var(--primary);
+  padding: 10px;
+}
+
+.leftAlignedSection{
+  box-shadow: 0.8rem 0.8rem 1.4rem var(--greyLight-2), -0.2rem -0.2rem 1.8rem var(--white);
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+}
+
+.leftAlignedSection .skillContentContainer{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.rightAlignedSection .skillContentContainer{
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-around;
+}
+
+.skillContentContainer *{
+  width: 30%;
+}
+
+.skillContentImage img{
+  width: 100%;
+}
+
+.skillContentText{
+  align-self: center;
+}
+
+.skillContentText p{
+  color: var(--greyDark);
+  font-size: medium;
+  text-align: center;
+  display: inline;
+}
+
+/* media queries */
+
+@media screen and (max-width:800px){
+  .mobileNav{
+    display: block;
+  }
+  .desktopNav{
+    display: none;
+  }
+  .mobileTextToHide{
+    display: none;
+  }
+  .mobileTextToHideInline{
+    display: none;
+  }
+  .mobileTextToDisplay{
+    display: block;
+  }
+  footer .btn{
+    height: 3rem;
+    width: 5rem;
+  }
+  .titleTextWrapDiv{
+    width: 90%;
+  }
+  .skillContentEmptySpace{
+    display: none;
+  }
+}
+
+
+@media screen and (max-width:800px) and (min-width:425px){
+  .skillContentContainer *{
+    width: 45%;
+  }
+}
+
+@media screen and (max-width:425px){
+  .skillContentContainer *{
+    width: 90%;
+  }
 }
