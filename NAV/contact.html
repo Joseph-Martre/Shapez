@@ -68,11 +68,84 @@
 
     </header>
     <main>
-
-    <section>
-    </section>
-    <section class="dummySection">
-        <h3>I am content!</h3>
+    <section id="formScene">
+      <div class="formBoundingBox">
+      <form method="get" action="">
+        <p>
+            <label for="prenom">Votre prénom :</label>
+            <input type="text" name="prenom" id="prenom" placeholder="Votre prénom" size="30" maxlength="20">
+        </p>
+        <p><!--Checkbox-->
+            <p>Which shapes would you rate as above average?</p>
+            <div class="checkboxContainer">
+              <input class="blueCheckbox" type="checkbox" name="Spheres" id="Spheres">
+                <label class="tick" for="Spheres">&#10004;</label>
+                <span>
+                  <label for="Spheres">Spheres</label>
+                </span>
+            </div>
+            <div class="checkboxContainer">
+              <input class="blueCheckbox" type="checkbox" name="Cubes" id="Cubes">
+                <label class="tick" for="Cubes">&#10004;</label>
+                <span>
+                  <label for="Cubes">Cubes</label>
+                </span>
+            </div>
+            <div class="checkboxContainer">
+              <input class="blueCheckbox" type="checkbox" name="Carpets" id="Carpets">
+                <label class="tick" for="Carpets">&#10004;</label>
+                <span>
+                  <label for="Carpets">Carpets</label>
+                </span>
+            </div>
+            <div class="checkboxContainer">
+              <input class="blueCheckbox" type="checkbox" name="Snowflakes" id="Snowflakes">
+                <label class="tick" for="Snowflakes">&#10004;</label>
+                <span>
+                  <label for="Snowflakes">Snowflakes</label>
+                </span>
+            </div>
+        </p>
+        <p><!--Radio-->
+            Veuillez indiquer la tranche d'âge dans laquelle vous vous situez : 
+            
+            <div class="radioContainer">
+              <input class="blueRadio" type="radio" name="yesnoradio" id="Yes">
+                <label class="radioTick" for="Yes"></label>
+                <span>
+                  <label for="Yes">Yes</label>
+                </span>
+            </div>
+            <div class="radioContainer">
+              <input class="blueRadio" type="radio" name="yesnoradio" id="No">
+              <label class="radioTick" for="No"></label>
+              <span>
+                <label for="No">No</label>
+              </span>
+            </div>
+            <input type="radio" name="age" value="moins15" id="moins15"><label for="moins15">Moins de 15 ans</label>
+            <input type="radio" name="age" value="medium15-25" id="medium15-25"><label for="medium15-25">15-25 ans</label>
+            <input type="radio" name="age" value="medium25-40" id="medium25-40"><label for="medium25-40">25-40 ans</label>
+            <input type="radio" name="age" value="plus40" id="plus40"><label for="plus40">Plus de 40 ans</label>
+        </p>
+        <p>
+            <label for="pays">De quel pays venez-vous ?</label>
+            <select name="pays" id="pays">
+                <option value="senegal">Sénégal</option>
+                <option value="royaume-uni">Royaume-Uni</option>
+                <option value="france" selected>France</option>
+                <option value="maroc">Maroc</option>
+            </select>
+        </p>
+            <fieldset>
+                <legend>Vos coordonnées</legend>
+                <label for="nom">Quel est votre nom ?</label><textarea placeholder="Ossas" name="nom" id="nom"></textarea>
+                <label for="nom">Quel est votre prénom ?</label><input type="text" name="prenom" id="prenom" required>
+                <label for="nom">Quel est votre email ?</label><input type="email" name="email" id="email">
+            </fieldset>
+            <input type="submit" value="Send Form">
+      </form>
+      </div>
     </section>
   </main>
 

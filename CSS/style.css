@@ -498,4 +498,11 @@ h1{
   .skillContentContainer *{
     width: 90%;
   }
+  .skillContentContainer{
+    flex-wrap: wrap;
+  }
+  .skillContentText{
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
 }

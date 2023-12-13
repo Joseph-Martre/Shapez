@@ -39,6 +39,14 @@
     background: var(--greyLight-1);
     font-family: "Poppins", sans-serif;
   }
+
+/* force footer to bottom */
+
+main{
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
   
   /* .container {
     min-height: 100vh;
@@ -64,8 +72,6 @@
     align-items: center;
   } */
 
-/* media query */
-
 .desktopNav{
   display: block;
 }
@@ -82,28 +88,6 @@
 }
 .mobileTextToDisplay{
   display: none;
-}
-
-@media screen and (max-width:800px){
-  .mobileNav{
-    display: block;
-  }
-  .desktopNav{
-    display: none;
-  }
-  .mobileTextToHide{
-    display: none;
-  }
-  .mobileTextToHideInline{
-    display: none;
-  }
-  .mobileTextToDisplay{
-    display: block;
-  }
-  footer .btn{
-    height: 3rem;
-    width: 5rem;
-  }
 }
 
   /* header */
@@ -392,11 +376,118 @@ footer .btn{
   height: 3rem;
 }
 
-/* dummy bottom section just to test scrolling */
+/* form looks */
 
-.dummySection{
-    font-family: "Poppins", sans-serif;
-    display: flex;
-    justify-content: center;
-    height: 1500px;
+#formScene{
+  display: flex;
+  justify-content: center;
+  margin-top: 80px;
+}
+
+.formBoundingBox{
+  color: var(--greyDark);
+  font-size: medium;
+  width: 90%;
+  border-radius: 3rem;
+  box-shadow: 0.8rem 0.8rem 1.4rem var(--greyLight-2), -0.2rem -0.2rem 1.8rem var(--white);
+  padding: 4rem;
+}
+
+/* radio looks */
+
+.blueRadio{
+  display: none;
+}
+
+.radioTick{
+  box-shadow: 0.3rem 0.3rem 0.6rem var(--greyLight-2), -0.2rem -0.2rem 0.5rem var(--white);
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  width: 2.8rem;
+  height: 2.8rem;
+  border-radius: 50%;
+}
+
+.radioTick::after{
+  content: "";
+  position: absolute;
+  width: 1.4rem;
+  height: 1.4rem;
+  background: var(--greyDark);
+  border-radius: 50%;
+  transition: 0.3s ease;
+}
+
+.radioTick:hover::after{
+  background: var(--primary);
+}
+
+.radioContainer input:checked ~ label{
+  box-shadow: inset 0.2rem 0.2rem 0.5rem var(--greyLight-2), inset -0.2rem -0.2rem 0.5rem var(--white);
+}
+
+.radioContainer input:checked ~ label::after{
+  background: var(--primary);
+}
+
+/* checkbox looks */
+
+.blueCheckbox{
+  display: none;
+}
+
+.blueCheckbox ~ .tick{
+  box-shadow: 0.3rem 0.3rem 0.6rem var(--greyLight-2), -0.2rem -0.2rem 0.5rem var(--white);
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.5rem;
+  width: 2.8rem;
+  height: 2.8rem;
+}
+
+.tick:hover{
+  color: var(--primary);
+}
+
+.tick{
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--greyDark);
+  transition: 0.3s ease;
+  transform: translate(-2px);
+}
+
+.blueCheckbox:checked ~ .tick{
+  box-shadow: inset 0.2rem 0.2rem 0.5rem var(--greyLight-2), inset -0.2rem -0.2rem 0.5rem var(--white);
+  color: var(--primary);
+}
+
+/* media queries */
+
+@media screen and (max-width:800px){
+  .mobileNav{
+    display: block;
+  }
+  .desktopNav{
+    display: none;
+  }
+  .mobileTextToHide{
+    display: none;
+  }
+  .mobileTextToHideInline{
+    display: none;
+  }
+  .mobileTextToDisplay{
+    display: block;
+  }
+  footer .btn{
+    height: 3rem;
+    width: 5rem;
+  }
 }
