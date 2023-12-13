@@ -71,46 +71,52 @@
     <section id="formScene">
       <div class="formBoundingBox">
       <form method="get" action="">
-        <fieldset class="fieldsetSelector">
+        <fieldset class="fieldsetSelector coordinatesField">
           <legend>Your Coordinates</legend>
-          <label for="firstname">First Name</label><input class="formTextArea" type="text" name="firstname" id="firstname">
-          <label for="lastname">Last Name</label><input class="formTextArea" type="text" name="lastname" id="lastname">
-          <label for="emailfield">Email</label><input class="formTextArea" type="email" name="emailfield" id="emailfield">
+          <div class="labelAndField">
+            <label for="firstname">First Name</label><input class="formTextArea" type="text" name="firstname" id="firstname">
+          </div>
+          <div class="labelAndField" id="labelAndFieldMiddle">
+            <label for="lastname">Last Name</label><input class="formTextArea" type="text" name="lastname" id="lastname">
+          </div>
+          <div class="labelAndField">
+            <label for="emailfield">Email</label><input class="formTextArea" type="email" name="emailfield" id="emailfield">
+          </div>
         </fieldset>
             <!--Checkbox-->
-            <fieldset class="fieldsetSelector">
-            <legend>Which shapes would you rate as above average?</legend>
-            <div class="checkboxContainer">
-              <input class="blueCheckbox" type="checkbox" name="Spheres" id="Spheres">
-                <label class="tick" for="Spheres">&#10004;</label>
-                <span>
-                  <label for="Spheres">Spheres</label>
-                </span>
-            </div>
-            <div class="checkboxContainer">
-              <input class="blueCheckbox" type="checkbox" name="Cubes" id="Cubes">
-                <label class="tick" for="Cubes">&#10004;</label>
-                <span>
-                  <label for="Cubes">Cubes</label>
-                </span>
-            </div>
-            <div class="checkboxContainer">
-              <input class="blueCheckbox" type="checkbox" name="Carpets" id="Carpets">
-                <label class="tick" for="Carpets">&#10004;</label>
-                <span>
-                  <label for="Carpets">Carpets</label>
-                </span>
-            </div>
-            <div class="checkboxContainer">
-              <input class="blueCheckbox" type="checkbox" name="Snowflakes" id="Snowflakes">
-                <label class="tick" for="Snowflakes">&#10004;</label>
-                <span>
-                  <label for="Snowflakes">Snowflakes</label>
-                </span>
-            </div>
+            <fieldset class="fieldsetSelector shapesField">
+              <legend>Which shapes would you rate as above average?</legend>
+              <div class="checkboxContainer">
+                <input class="blueCheckbox" type="checkbox" name="Spheres" id="Spheres">
+                  <label class="tick" for="Spheres">&#10004;</label>
+                  <span>
+                    <label for="Spheres">Spheres</label>
+                  </span>
+              </div>
+              <div class="checkboxContainer">
+                <input class="blueCheckbox" type="checkbox" name="Cubes" id="Cubes">
+                  <label class="tick" for="Cubes">&#10004;</label>
+                  <span>
+                    <label for="Cubes">Cubes</label>
+                  </span>
+              </div>
+              <div class="checkboxContainer">
+                <input class="blueCheckbox" type="checkbox" name="Carpets" id="Carpets">
+                  <label class="tick" for="Carpets">&#10004;</label>
+                  <span>
+                    <label for="Carpets">Carpets</label>
+                  </span>
+              </div>
+              <div class="checkboxContainer">
+                <input class="blueCheckbox" type="checkbox" name="Snowflakes" id="Snowflakes">
+                  <label class="tick" for="Snowflakes">&#10004;</label>
+                  <span>
+                    <label for="Snowflakes">Snowflakes</label>
+                  </span>
+              </div>
             </fieldset>
             <!--Radio-->
-              <fieldset class="fieldsetSelector">
+              <fieldset class="fieldsetSelector radioField">
               <legend>Do you accept the rectangular parallelepiped as the most interesting shape?</legend> 
               <div class="radioContainer">
                 <input class="blueRadio" type="radio" name="yesnoradio" id="Yes">
@@ -127,7 +133,7 @@
                 </span>
               </div>
             </fieldset>
-            <fieldset class="fieldsetSelector">
+            <fieldset class="fieldsetSelector selectField">
               <legend>Select your current shape mastery level:</legend>
               <select name="mastery" id="mastery">
                   <option value="novice" selected>Novice</option>
@@ -137,11 +143,13 @@
                   <option value="virtuoso">Virtuoso</option>
               </select>
             </fieldset>
-            <fieldset class="fieldsetSelector">
+            <fieldset class="fieldsetSelector commentField">
               <legend>Your comments and/or suggestions</legend>
-              <textarea class="formTextArea" name="commentArea" id="commentArea"></textarea>
+              <textarea class="formTextArea" name="commentArea" id="commentArea" required placeholder="E.g. This website is awesome, I just wish it had more flashing lights for accessibility!"></textarea>
             </fieldset>
-            <input type="submit" value="Send Form">
+            <div class="submitButtonContainer">
+              <input type="submit" value="Send Form" id="formSubmitButton">
+            </div>
       </form>
       </div>
     </section>
