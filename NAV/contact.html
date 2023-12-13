@@ -71,12 +71,15 @@
     <section id="formScene">
       <div class="formBoundingBox">
       <form method="get" action="">
-        <p>
-            <label for="prenom">Votre prénom :</label>
-            <input type="text" name="prenom" id="prenom" placeholder="Votre prénom" size="30" maxlength="20">
-        </p>
-        <p><!--Checkbox-->
-            <p>Which shapes would you rate as above average?</p>
+        <fieldset class="fieldsetSelector">
+          <legend>Your Coordinates</legend>
+          <label for="firstname">First Name</label><input class="formTextArea" type="text" name="firstname" id="firstname">
+          <label for="lastname">Last Name</label><input class="formTextArea" type="text" name="lastname" id="lastname">
+          <label for="emailfield">Email</label><input class="formTextArea" type="email" name="emailfield" id="emailfield">
+        </fieldset>
+            <!--Checkbox-->
+            <fieldset class="fieldsetSelector">
+            <legend>Which shapes would you rate as above average?</legend>
             <div class="checkboxContainer">
               <input class="blueCheckbox" type="checkbox" name="Spheres" id="Spheres">
                 <label class="tick" for="Spheres">&#10004;</label>
@@ -105,43 +108,38 @@
                   <label for="Snowflakes">Snowflakes</label>
                 </span>
             </div>
-        </p>
-        <p><!--Radio-->
-            Veuillez indiquer la tranche d'âge dans laquelle vous vous situez : 
-            
-            <div class="radioContainer">
-              <input class="blueRadio" type="radio" name="yesnoradio" id="Yes">
-                <label class="radioTick" for="Yes"></label>
+            </fieldset>
+            <!--Radio-->
+              <fieldset class="fieldsetSelector">
+              <legend>Do you accept the rectangular parallelepiped as the most interesting shape?</legend> 
+              <div class="radioContainer">
+                <input class="blueRadio" type="radio" name="yesnoradio" id="Yes">
+                  <label class="radioTick" for="Yes"></label>
+                  <span>
+                    <label for="Yes">Yes</label>
+                  </span>
+              </div>
+              <div class="radioContainer">
+                <input class="blueRadio" type="radio" name="yesnoradio" id="No">
+                <label class="radioTick" for="No"></label>
                 <span>
-                  <label for="Yes">Yes</label>
+                  <label for="No">No</label>
                 </span>
-            </div>
-            <div class="radioContainer">
-              <input class="blueRadio" type="radio" name="yesnoradio" id="No">
-              <label class="radioTick" for="No"></label>
-              <span>
-                <label for="No">No</label>
-              </span>
-            </div>
-            <input type="radio" name="age" value="moins15" id="moins15"><label for="moins15">Moins de 15 ans</label>
-            <input type="radio" name="age" value="medium15-25" id="medium15-25"><label for="medium15-25">15-25 ans</label>
-            <input type="radio" name="age" value="medium25-40" id="medium25-40"><label for="medium25-40">25-40 ans</label>
-            <input type="radio" name="age" value="plus40" id="plus40"><label for="plus40">Plus de 40 ans</label>
-        </p>
-        <p>
-            <label for="pays">De quel pays venez-vous ?</label>
-            <select name="pays" id="pays">
-                <option value="senegal">Sénégal</option>
-                <option value="royaume-uni">Royaume-Uni</option>
-                <option value="france" selected>France</option>
-                <option value="maroc">Maroc</option>
-            </select>
-        </p>
-            <fieldset>
-                <legend>Vos coordonnées</legend>
-                <label for="nom">Quel est votre nom ?</label><textarea placeholder="Ossas" name="nom" id="nom"></textarea>
-                <label for="nom">Quel est votre prénom ?</label><input type="text" name="prenom" id="prenom" required>
-                <label for="nom">Quel est votre email ?</label><input type="email" name="email" id="email">
+              </div>
+            </fieldset>
+            <fieldset class="fieldsetSelector">
+              <legend>Select your current shape mastery level:</legend>
+              <select name="mastery" id="mastery">
+                  <option value="novice" selected>Novice</option>
+                  <option value="practitioner">Practitioner</option>
+                  <option value="adept">Adept</option>
+                  <option value="expert">Expert</option>
+                  <option value="virtuoso">Virtuoso</option>
+              </select>
+            </fieldset>
+            <fieldset class="fieldsetSelector">
+              <legend>Your comments and/or suggestions</legend>
+              <textarea class="formTextArea" name="commentArea" id="commentArea"></textarea>
             </fieldset>
             <input type="submit" value="Send Form">
       </form>
