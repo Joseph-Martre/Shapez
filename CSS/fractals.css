@@ -6,6 +6,7 @@
 }
 
 :root {
+    /* colors */
   --primary-light: #8abdff;
   --primary: #6d5dfc;
   --primary-dark: #5b0eeb;
@@ -38,50 +39,6 @@ html{
   overflow-x: hidden;
   background: var(--greyLight-1);
   font-family: "Poppins", sans-serif;
-}
-
-/* .container {
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-family: "Poppins", sans-serif;
-  background: var(--greyLight-1);
-}
-
-.components {
-  width: 75rem;
-  height: 40rem;
-  border-radius: 3rem;
-  box-shadow: 0.8rem 0.8rem 1.4rem var(--greyLight-2), -0.2rem -0.2rem 1.8rem var(--white);
-  padding: 4rem;
-  display: grid;
-  grid-template-columns: 17.6rem 19rem 20.4rem;
-  grid-template-rows: repeat(autofit, -webkit-min-content);
-  grid-template-rows: repeat(autofit, min-content);
-  grid-column-gap: 5rem;
-  grid-row-gap: 2.5rem;
-  align-items: center;
-} */
-
-/* media query */
-
-.desktopNav{
-display: block;
-}
-
-.mobileNav{
-display: none;
-}
-
-.mobileTextToHide{
-display: block;
-}
-.mobileTextToHideInline{
-display: inline-block;
-}
-.mobileTextToDisplay{
-display: none;
 }
 
 /* header */
@@ -281,6 +238,56 @@ transition: all 0.2s ease;
 transform: translate(calc(var(--chocolateEntryInitialRightOffset) - 2 * var(--chocolateGridPixelSize)), calc(var(--chocolateEntryInitialTopOffset) - 2 * var(--chocolateGridPixelSize) + 8 * var(--chocolateEntrySpacing)));
 } */
 
+/* footer */
+
+footer{
+  color: var(--greyDark);
+  height: 60px;
+  box-shadow: 1rem 0rem 1.8rem var(--white);
+  position: static;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  }
+  
+  footer a{
+  color: var(--greyDark);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  }
+  
+  footer p{
+  display: inline-block;
+  }
+  
+  footer a span{
+  background-color: var(--greyDark);
+  height: 60px;
+  }
+  
+  footer a:hover{
+  color: var(--primary);
+  text-decoration: underline;
+  }
+  
+  footer a:hover span{
+  background-color: var(--primary);
+  }
+  
+  footer *{
+  text-decoration: none;
+  }
+  
+  footer .btn{
+  height: 3rem;
+  }
+  
+  #dummyTopMarginSection, #dummyBottomMarginSection{
+  height: 60px;
+  }
+
 /*  BUTTONS  */
 .btn {
   width: 15rem;
@@ -321,57 +328,6 @@ transform: translate(calc(var(--chocolateEntryInitialRightOffset) - 2 * var(--ch
 }
 .btn p {
   font-size: 1.6rem;
-}
-
-
-/* footer */
-
-footer{
-color: var(--greyDark);
-height: 60px;
-box-shadow: 1rem 0rem 1.8rem var(--white);
-position: static;
-width: 100%;
-display: flex;
-justify-content: space-around;
-align-items: center;
-}
-
-footer a{
-color: var(--greyDark);
-display: flex;
-justify-content: center;
-align-items: center;
-}
-
-footer p{
-display: inline-block;
-}
-
-footer a span{
-background-color: var(--greyDark);
-height: 60px;
-}
-
-footer a:hover{
-color: var(--primary);
-text-decoration: underline;
-}
-
-footer a:hover span{
-background-color: var(--primary);
-}
-
-footer *{
-text-decoration: none;
-}
-
-footer .btn{
-height: 3rem;
-}
-
-#dummyTopMarginSection, #dummyBottomMarginSection{
-height: 60px;
 }
 
 /* flex shape section */
@@ -438,6 +394,26 @@ padding: 20px;
 .titleTextWrapDiv{
   width: 60%;
 }
+
+/* media query setup*/
+
+.desktopNav{
+  display: block;
+  }
+  
+  .mobileNav{
+  display: none;
+  }
+  
+  .mobileTextToHide{
+  display: block;
+  }
+  .mobileTextToHideInline{
+  display: inline-block;
+  }
+  .mobileTextToDisplay{
+  display: none;
+  }
 
 @media screen and (max-width:800px){
 .mobileNav{
